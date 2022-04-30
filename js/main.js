@@ -6,6 +6,7 @@ const refs = {
   lightBox: document.querySelector('.lightbox'),
   lightBoxImage: document.querySelector('.lightbox__image'),
   closeModalBtn: document.querySelector('button[data-action="close-lightbox"]'),
+  lightBoxOverlay: document.querySelector('.lightbox__overlay'),
 };
 let currentIndex;
 const lastIndex = galleryArray.length - 1;
@@ -57,6 +58,12 @@ const closeModal = function () {
   window.removeEventListener('keydown', escapePress);
   window.removeEventListener('keydown', arrowPress);
 };
+
+overlayRef.addEventListener('click', event => {
+  if (event.target === event.currentTarget) {
+    closeModal();
+  }
+});
 
 function escapePress(event) {
   if (event.code === 'Escape') {
