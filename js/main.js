@@ -59,7 +59,7 @@ const closeModal = function () {
   window.removeEventListener('keydown', arrowPress);
 };
 
-overlayRef.addEventListener('click', event => {
+refs.lightBoxOverlay.addEventListener('click', event => {
   if (event.target === event.currentTarget) {
     closeModal();
   }
